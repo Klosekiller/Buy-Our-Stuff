@@ -36,7 +36,7 @@ let chosen = "All Items";
 
 function searchItems() {
     let chosen = categories.options[categories.selectedIndex].value;
-    let sorted = stuff.sort( (a, b) => (a.Name > b.Name));
+    let sorted = stuff.sort( (a, b) => (a.Name > b.Name) ? 1 : -1);
     
     document.querySelector(".stuff-display").innerHTML = '';
     sorted.forEach( (el) => {
