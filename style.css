@@ -34,7 +34,7 @@ header, .divider {
 .usImage {
     display: flex;
     justify-content: center;
-    background-image: url("../Img/LydiaDoug.png");
+    background-image: url("./Img/LydiaDoug.png");
     background-position: 95%;
     width: 100vw;
     height: auto;
