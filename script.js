@@ -30,7 +30,25 @@ let stuff = [{
     Category: ""
 }];
 
-let selection = document.querySelector("#categories");
+let categories = document.querySelector("#categories");
+
+function searchItems() {
+    let selectedItem = categories.options[categories.selectedIndex].value;
+    return selectedItem;
+    //Save the value of the dropdown into a variable.
+    //Create a new array that includes objects with the same category as the dropdown value. If "All Items," skip this step.
+    //Arrange the new array in alphabetical order
+    //Post new array into HTML
+    //Post HTML
+};
+
+categories.addEventListener("change", searchItems());
+
+searchItems();
+
+
+//ALEX'S CODE
+/*let selection = document.querySelector("#categories");
 let chosen = "All Items";
 
 selection.addEventListener('change', () => {
@@ -39,10 +57,11 @@ selection.addEventListener('change', () => {
     let display = document.querySelector(".stuff-display");
     for (let child of display.children) {
         child.hidden = (child.id === chosen);
-    }
+    };
 
-});
+});*/
 
+//ALEX'S CODE
 /*let selection = document.querySelector("#categories");
 let chosen = "All Items";
 
@@ -72,6 +91,7 @@ else,
     };
 };
 
+//ORIGINAL CODE
 let selection = document.querySelector("#categories");
 
 selection.addEventListener('change', () => {
@@ -84,5 +104,3 @@ selection.addEventListener('change', () => {
         searchItems();
     }
 });*/
-
-/*Really I'm trying to make a function that filters based on the value of the dropdown. This function would run on page load and any time the dropdown value changes, which would then change the display of items. It sounds simple enough but has been killing me haha*/
