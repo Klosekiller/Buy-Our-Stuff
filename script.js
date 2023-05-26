@@ -2,11 +2,12 @@ const categories = document.querySelector("#categories");
 const display = document.querySelector(".stuff-display");
 var stuff = [];
 var chosen = "All Items";
+const prod = true;
 
 function load() {
     $.ajax({
         type: 'GET',
-        url: 'http://localhost:9000/data'
+        url: prod ? 'https://yatessales.herokuapp.com/data' : 'http://localhost:9000/data'
     }).done((data) => {
         stuff = data;
     
