@@ -1,5 +1,14 @@
-body {
+* {
     margin: 0;
+}
+
+html {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    margin: 50px;
     padding: 0;
     background: rgb(16,26,110);
     background: linear-gradient(162deg, rgba(16,26,110,1) 0%, #7635b3 60%);
@@ -13,35 +22,71 @@ body {
     align-items: center;
 }
 
-header, .divider {
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-hand {
+    margin-top: 40px;
+}
+
+.openingText {
+    width:100%;
+    height: auto;
+    color:aliceblue;
+    font-size: 70px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+.donate {
+    width: auto;
+    height: auto;
+    background-color: aliceblue;
+    border:3px solid #7635b3;
+    border-radius: 15px;
+    color: #7635b3;
+    margin: 40px;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #7635b3;
+    color: aliceblue;
+    border:3px solid aliceblue;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    height: auto;
+    color:aliceblue;
+    text-align: center;
+    padding: 100px;
+    font-weight: 700;
+    font-size: 50px;
+    gap: 10px;
+}
+
+.divider {
     width: 100vw;
     height: auto;
     background: rgb(92,32,150);
     background: linear-gradient(0deg, rgba(92,32,150,1) 0%, rgba(208,123,241,1) 17%, rgba(239,209,250,1) 36%, rgba(255,255,255,0.9) 75%);
 }
 
-.head-text {
-    font-size: 80px;
-    padding: 0;
-    margin: 0;
-}
-
-.head-text, .cat-label {
+.cat-label {
     text-align: center;
     color: rgba(92,32,150,1);
 }
 
-.usImage {
-    display: flex;
-    justify-content: center;
-    background-image: url("./Img/LydiaDoug.png");
-    background-position: 95%;
-    width: 100vw;
-    height: auto;
 
-    background-repeat: no-repeat;
-    color:aliceblue;
-}
 
 .contact {
     font-weight: 300;
@@ -51,28 +96,7 @@ p {
     font-size: large;
 }
 
-.btn-group {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    align-self: center;
-}
 
-button {
-    width: 350px;
-    height: 150px;
-    margin: 20px;
-    background-color: aliceblue;
-    border:3px solid #7635b3;
-    border-radius: 15px;
-    color: #7635b3;
-    font-size: xx-large;
-    font-weight: bold;
-}
-
-button:hover {
-    background-color: rgba(240, 248, 255, 0.8);
-}
 
 .divider {
     display: flex;
@@ -80,20 +104,7 @@ button:hover {
     align-items: center;
 }
 
-.description {
-    padding-left: 50px;
-    width: 60%;
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-}
 
-.openingText {
-    width:100%;
-    height: auto;
-    color:aliceblue;
-    font-size: 70px;
-}
 
 .container {
     display: flex;
@@ -143,3 +154,6 @@ select {
     overflow: hidden;
     padding: 10px;
 }
+
+
+
