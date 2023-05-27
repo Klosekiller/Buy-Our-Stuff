@@ -3,7 +3,7 @@ const display = document.querySelector(".stuff-display");
 var stuff = [];
 var options = ["All Items"];
 var chosen = "All Items";
-const prod = false;
+const prod = true;
 
 function load() {
     $.ajax({
