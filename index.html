@@ -13,18 +13,23 @@
     <header>
         <h1><i class="fa-regular fa-hand fa-2xl" style="color: #ffffff;"></i></h1>
         <h1 class="openingText">Welcome to our stuff!</h1>
-        <button class="donate" onclick="window.open('https://account.venmo.com/u/Lydia-Cannon', '_blank');">Donate</button>
+        <div class="btn-group">
+            <button onClick="document.getElementById('#faq1').scrollIntoView();">About</button>
+            <button onclick="window.open('https://account.venmo.com/u/Lydia-Cannon', '_blank');">Donate</button>
+            <button onClick="document.getElementById('#faq2').scrollIntoView();">Search</button>
+        </div>
     </header>
     <main>
-        <section class="description">
+        <section class="description" id="#faq1">
             <p>We're moving and getting married!</p>
-            <p>This means we need to sell our stuff.</p>
+            <p>...and selling our stuff to raise funds.</p>
             <p>If you need yard equipment, furniture, games, movies, and more, check out what's available!</p>
-            <p>Only while supplies lasts! Price is as is or best offer!</p>
-            <h3>Ready to make an offer? <span class="contact">  Contact us at: <i>(803) 378-2820</i></span></h3>
-            <p class="contact"></p>           
+            <p>Only while supplies lasts!</p>
+            <hr>
+            <h4>Ready to make an offer?</h4>
+            <span class="contact">  Contact us at: (803) 378-2820</span>          
         </section>
-        <section class="divider">
+        <section class="divider" id="#faq2">
             <h3 class="cat-label"><label for="categories">Search by category:</label></h3>
             <select name="categories" id="categories">
                 <option value="All Items" selected>All Items</option>
@@ -39,6 +44,12 @@
             <div class="stuff-display"></div>
         </section>
     </main>
+    <footer>
+        <p>Not find what you were looking for but still want to help?</p>
+        <div class="btn-group">
+            <button onclick="window.open('https://account.venmo.com/u/Lydia-Cannon', '_blank');">Donate</button>
+        </div>
+    </footer>
     <script src="./script.js"></script>
 </body>
 </html>
