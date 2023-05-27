@@ -71,6 +71,7 @@ async function get_file() {
 					Name: line_items[0].replaceAll('"',''),
 					Price: line_items[1],
 					Image: line_items[2],
+					ImageSource: '',
 					Category: line_items[3],
 					BestOffer: (line_items[4] == 'TRUE'),
 					Available: (line_items[5] == 'TRUE')
@@ -82,6 +83,13 @@ async function get_file() {
 
 		let res = await drive.files.list({
 			fields: 'nextPageToken, files(id, name)'
+		});
+		res.data.files.forEach((el) => {
+			items.forEach((i) => {
+				if (i['Image'] == el['name']) {
+					i['ImageSource'] =`https://drive.google.com/uc?id=${el['id']}`;
+				}
+			});
 		});
 		return items;
 	} catch(ex) {
