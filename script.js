@@ -3,7 +3,7 @@ const display = document.querySelector(".stuff-display");
 var stuff = [];
 var options = ["All Items"];
 var chosen = "All Items";
-const prod = true;
+const prod = false;
 
 function load() {
     $.ajax({
@@ -19,13 +19,22 @@ function load() {
         document.querySelector(".stuff-display").innerHTML = '';
         sorted.forEach( (el) => {
             console.log(el);
-            if (!options.includes(el['Category'])) {
-                options.push(el['Category']);
-                categories.innerHTML += `<option value='${el['Category']}' selected>${el['Category']}</option>`
-            }
+            if (el['Available']) {
+                if (!options.includes(el['Category'])) {
+                    options.push(el['Category']);
+                    categories.innerHTML += `<option value='${el['Category']}' selected>${el['Category']}</option>`
+                }
 
-            if (el['Category'] === chosen || chosen === "All Items") {
-                document.querySelector(".stuff-display").innerHTML += `<div class='card'> <img src='${el['ImageSource']}' alt='${el['Name']}' class='card-img'> <h2 class='name'>${el['Name']}</h2><h3 class='price'>$ ${el['Price']}</h3><h4 class='category'>${el['Category']}</h4></div>`
+                if (el['Category'] === chosen || chosen === "All Items") {
+                    let bestoffer = (el['BestOffer'] && el['Price'].trim() != '') ? 'or best offer': '';
+                    let price = (el['Price'].trim() == '') ? 'Best Offer' : `$ ${el['Price']}`;
+                    document.querySelector(".stuff-display").innerHTML += `<div class='card'>
+                        <img src='${el['ImageSource']}' alt='${el['Name']}' class='card-img'>
+                        <h2 class='name'>${el['Name']}</h2>
+                        <h3 class='price'>${price} ${bestoffer}</h3>
+                        <h4 class='category'>${el['Category']}</h4>
+                        </div>`;
+                }
             }
         });
 
@@ -41,7 +50,14 @@ function searchItems() {
     sorted.forEach( (el) => {
         console.log(el);
         if (el['Category'] === chosen || chosen === "All Items") {
-            document.querySelector(".stuff-display").innerHTML += `<div class='card'> <img src='${el['ImageSource']}' alt='${el['Name']}' class='card-img'> <h2 class='name'>${el['Name']}</h2><h3 class='price'>$ ${el['Price']}</h3><h4 class='category'>${el['Category']}</h4></div>`
+            let bestoffer = (el['BestOffer'] && el['Price'].trim() != '') ? 'or best offer': '';
+            let price = (el['Price'].trim() == '') ? 'Best Offer' : `$ ${el['Price']}`;
+            document.querySelector(".stuff-display").innerHTML += `<div class='card'>
+                <img src='${el['ImageSource']}' alt='${el['Name']}' class='card-img'>
+                <h2 class='name'>${el['Name']}</h2>
+                <h3 class='price'>${price} ${bestoffer}</h3>
+                <h4 class='category'>${el['Category']}</h4>
+                </div>`;
         }
     });
 };
